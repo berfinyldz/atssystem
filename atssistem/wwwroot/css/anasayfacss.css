@@ -1,0 +1,77 @@
+﻿.arama {
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.17);
+    height: 50px;
+    width:70vw;
+    z-index: 10;
+    justify-self: center;
+}
+.pozisyonara {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 30vw;
+    height: 30px;
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.17);
+}
+.departmansec {
+    margin-top: 10px;
+    width: 30vw;
+    height: 30px;
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.17);
+}
+.arabutonu {
+    margin-top: 10px;
+    margin-left:9px;
+    width: 6vw;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    background-color: rgba(32, 1, 197, 1);
+    color: white;
+}
+.icerik {
+    display: flex;
+    margin-left: 15vw;
+}
+.ilanlar {
+    width: 45vw;
+}
+
+.ilan {
+    border: 1px solid rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    padding-right: 20px;
+}
+.ilan img{
+    margin-top: 10px;
+    width: 60px;
+    height: 50px;
+}
+.ilan div{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.detaybutonu{
+    margin-top: 20px;
+    margin-left: auto;
+    width: 200px;
+    height: 45px;
+    border-radius: 7px;
+    border: 2px solid blue;
+    color: blue;
+    background-color:transparent;
+}
+.nedenbiz {
+    margin-left: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.17);
+}
+.nedenbiz div h5{
+    font-size: 17px;
+}
+.nedenbiz div p {
+    font-size: 13px;
+}

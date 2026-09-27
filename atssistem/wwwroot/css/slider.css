@@ -1,0 +1,108 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: white;
+}
+.yazilar {
+    position: absolute;
+    z-index: 5;
+    left: 20px;
+    top: 30px;
+    color: black;
+}
+.yazilar p {
+        font-size: 14px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        color: #000000ae;
+}
+.yazilar h1{
+    font-family: Georgia;
+    font-size: 50px;
+}
+.yazilar button{
+    background-color: darkblue;
+    color: white;
+    font-size:13px;
+    border: none;
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+}
+.overlay {
+    position: absolute;
+    inset: 0;/*left right top bottom sıfır başlangıç konumunu tek satırda verir
+    */
+    z-index: 2;
+    background: 
+        linear-gradient( to right, white 0%, white 25%, rgba(255,255,255,.9) 35%, 
+        rgba(255,255,255,.4) 55%, transparent 80% );
+    pointer-events: none;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-left: auto;
+}
+
+.resimler {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-right: auto;
+    animation: kaydir 16s infinite;
+}
+
+.resim {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+    .resim img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain cover;
+        animation: zoom 4s ease-in-out infinite alternate;
+    }
+
+/* Kayma Animasyonu */
+@keyframes kaydir {
+    0%,20% {
+        transform: translateX(0);
+    }
+
+    25%,45% {
+        transform: translateX(-100%);
+    }
+
+    50%,70% {
+        transform: translateX(-200%);
+    }
+
+    75%,95% {
+        transform: translateX(-300%%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* İçe Doğru Yakınlaşma */
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+}

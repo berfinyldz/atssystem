@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kontrol Paneli</title>
+    <link href="~/css/ikmain.css" rel="stylesheet" />
+</head>
+<body>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <div class="navbar">
+        <label for="menu-toggle" class="menu-button">&#9776;</label>
+        <div class="navbar-brand">Fonon <span>/ Kontrol Paneli</span></div>
+        <input type="text" class="navbar-search" placeholder="Ara...">
+        <div class="navbar-right">
+            <div class="icon-button">&#128276;</div>
+            <div class="user-info">
+                ---
+                <small>Yönetici</small>
+            </div>
+        </div>
+    </div>
+
+    <label for="menu-toggle" class="overlay"></label>
+
+    <div class="sidebar">
+        <div class="sidebar-title">GENEL BAKIŞ</div>
+        <a class="active" href="#">Panel</a>
+        <a href="#">Analitik</a>
+        <a href="#">Müşteriler</a>
+
+        <div class="sidebar-title">İŞLETME</div>
+        <a href="#">Siparişler</a>
+        <a href="#">Envanter</a>
+        <a href="#">Ödemeler</a>
+        <a href="#">Raporlar</a>
+
+        <div class="sidebar-title">SİSTEM</div>
+        <a href="#">Ayarlar</a>
+    </div>
+
+    <div class="main">
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+
+</body>
+</html>
+

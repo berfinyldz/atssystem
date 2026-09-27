@@ -1,0 +1,189 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0F1115;
+    color: #E7E9EE;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* menüyü açıp kapatmak için gizli checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* ---------- ÜST BAR (NAVBAR) ---------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #171A21;
+    border-bottom: 1px solid #262B36;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 10;
+}
+
+.navbar-brand {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+    white-space: nowrap;
+}
+
+    .navbar-brand span {
+        color: #8B93A7;
+        font-weight: normal;
+    }
+
+.menu-button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #262B36;
+    background-color: #1D2129;
+    color: #E7E9EE;
+    font-size: 16px;
+    margin-right: 14px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 32px;
+}
+
+.navbar-search {
+    flex-grow: 1;
+    max-width: 360px;
+    height: 34px;
+    border: 1px solid #262B36;
+    background-color: #1D2129;
+    color: #E7E9EE;
+    padding: 0 10px;
+}
+
+.navbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #262B36;
+    background-color: #1D2129;
+    color: #E7E9EE;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 34px;
+}
+
+.user-info {
+    margin-left: 12px;
+    padding-left: 12px;
+    border-left: 1px solid #262B36;
+    font-size: 13px;
+}
+
+    .user-info small {
+        display: block;
+        color: #8B93A7;
+        font-weight: normal;
+    }
+
+/* ---------- SOL MENÜ (SIDEBAR) ---------- */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    background-color: #171A21;
+    border-right: 1px solid #262B36;
+    padding: 16px 10px;
+    overflow-y: auto;
+    z-index: 9;
+}
+
+.sidebar-title {
+    font-size: 11px;
+    color: #5C6478;
+    font-weight: bold;
+    padding: 0 8px;
+    margin: 14px 0 6px 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 9px 8px;
+    font-size: 14px;
+    color: #8B93A7;
+    margin-bottom: 2px;
+}
+
+    .sidebar a:hover {
+        background-color: #1D2129;
+        color: #E7E9EE;
+    }
+
+    .sidebar a.active {
+        background-color: #4A3A20;
+        color: #E8A33D;
+        font-weight: bold;
+    }
+
+/* karartma katmanı (mobilde menü açıkken) */
+.overlay {
+    display: none;
+}
+
+/* ---------- ANA BÖLÜM ---------- */
+.main {
+    margin-left: 220px;
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+.content {
+    padding: 30px 20px;
+}
+
+/* ---------- MOBİL GÖRÜNÜM ---------- */
+@media (max-width: 860px) {
+    .sidebar {
+        left: -220px;
+        transition: left 0.2s ease;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .navbar-search {
+        max-width: none;
+    }
+
+    #menu-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+
+    #menu-toggle:checked ~ .overlay {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 8;
+    }
+}

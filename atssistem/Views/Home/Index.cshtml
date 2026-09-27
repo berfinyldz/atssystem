@@ -1,0 +1,120 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @model List<Home>//controllerda parametre olarak alınacak yeri burada direkt çektik
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/slider.css" />
+    <link rel="stylesheet" href="~/css/anasayfacss.css" />
+</head>
+<body>
+    <section class="slider">
+
+        <div class="overlay"></div>
+        <div class="resimler">
+
+            <div class="resim">
+                <img src="~/img/itdepartment.jpg">
+            </div>
+
+            <div class="resim">
+                <img src="~/img/ikdepartment.jpg">
+            </div>
+
+            <div class="resim">
+                <img src="~/img/marketingdepart.jpg">
+            </div>
+
+            <div class="resim">
+                <img src="~/img/financedepart.jpg">
+            </div>
+
+        </div>
+
+        <div class="yazilar">
+            <h1>Kariyerine<br>Bizimle Yön Ver</h1>
+
+            <p>
+                Yenilikçi projelerde yer almak ve geleceğin <br />
+                teknolojilerini birlikte geliştirmek için
+                ekibimize katıl.
+            </p>
+
+            <button>Açık Pozisyonları İncele -></button>
+        </div>
+    </section>
+    <div class="arama">
+       <form asp-controller="Home" asp-action="Index" method="get">
+            <input type="search" name="arama" class="pozisyonara" value="" placeholder="Pozisyon Ara..." />
+            <select class="departmansec">
+                <option value="" selected disabled>Departman Seç</option>
+                <option value="1">IT Departmanı</option>
+                <option value="2">IK Departmanı</option>
+                <option value="3">Marketing</option>
+                <option value="4">Finance</option>
+            </select>
+            <button class="arabutonu">Ara</button>
+       </form>
+        
+    </div>
+    <br /><br /><br />
+
+    <div class="icerik">
+
+        <div class="ilanlar">
+            <h4><b>AÇIK POZİSYONLAR</b></h4>
+            @foreach(var ilan in Model)
+            {
+                <div class="ilan" name="ilan">
+                    <img src="@ilan.imgurl" alt="#" />
+                    <div>
+                        <h6>@ilan.isbaslik</h6>
+                        <p>@ilan.departman  |  @ilan.calismasekli</p>
+                    </div>
+                    <button onclick="location.href='/Home/Detay/@ilan.Id'" class="detaybutonu">Detayları Gör-></button>
+                </div>
+            }
+
+        </div>
+
+        <div class="nedenbiz">
+            <h3><b>Neden Biz?</b></h3>
+            <div class="biz">
+                
+                <div>
+                    <h5>Gelişim Odaklı Kültür</h5>
+                    <p>Sürekli öğrenmeyi ve gelişimi destekliyoruz.</p>
+                </div>
+            </div>
+            <div class="biz">
+                
+                <div>
+                    <h4>Esnek Çalışma</h4>
+                    <p>Hibrit çalışma modeli ile esnek bir denge sunuyoruz.</p>
+                </div>
+            </div>
+            <div class="biz">
+                
+                <div>
+                    <h4>Kariyer Fırsatları</h4>
+                    <p>Yeteneklerini keşfetmen için birçok fırsat seni bekliyor.</p>
+                </div>
+            </div>
+            <div class="biz">
+                
+                <div>
+                    <h4>Yan Haklar</h4>
+                    <p>Sağlık sigortası ,yemek kartı ve daha fazlası.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
