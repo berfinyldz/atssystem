@@ -1,0 +1,106 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "İK GİRİŞİ";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/iklogin.css" rel="stylesheet" />
+    <title>Kolay İK - Giriş</title>
+</head>
+
+<body>
+
+    <div class="login-page">
+
+        <!-- =========================
+             SOL - GİRİŞ
+        ========================== -->
+
+        <section class="left-section">
+
+            <div class="login-container">
+
+                
+                <form asp-controller="ikportal" asp-action="anasayfa">
+
+                    <div class="form-group">
+
+                        <label>E-posta Adresi</label>
+
+                        <input type="email"
+                               class="input-box"
+                               placeholder="E-posta Adresi">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>Parola</label>
+
+                        <div class="password-wrapper">
+
+                            <input type="password"
+                                   class="input-box">
+
+                            <span class="eye">◉</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button class="login-button"> Giriş Yap </button>
+
+                </form>
+
+
+                <div class="bottom-links">
+
+                    <a href="#">
+                        Parolamı Unuttum
+                    </a>
+
+                    <a href="#">
+                        Kurumsal Giriş
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SAĞ - TANITIM
+        ========================== -->
+
+        <section class="right-section">
+
+            <!-- Dalga çizgileri -->
+
+            <div class="wave one"></div>
+            <div class="wave two"></div>
+            <div class="wave three"></div>
+
+
+            <div class="right-content">
+                <!-- Başlık -->
+                <h1>
+                    İK PANELİ
+                </h1>
+                              
+
+        </section>
+
+    </div>
+
+</body>
+</html>

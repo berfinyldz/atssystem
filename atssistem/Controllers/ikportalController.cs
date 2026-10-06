@@ -8,5 +8,9 @@ namespace atssistem.Controllers
         {
             return View();
         }
+        public IActionResult login()
+        {
+            return View();
+        }
     }
 }
